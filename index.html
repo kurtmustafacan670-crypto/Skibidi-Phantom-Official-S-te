@@ -16,37 +16,42 @@
         body, html {
             min-height: 100%;
             font-family: 'Rajdhani', sans-serif;
-            background-color: #090202;
+            background-color: transparent;
             color: #ffffff;
             overflow-x: hidden;
         }
 
+        /* Arka Plan Slayt Katmanları */
         .bg-slideshow {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            transition: opacity 1.5s ease-in-out;
+            transition: opacity 1.2s ease-in-out;
+            pointer-events: none;
         }
 
         #bg-layer-1 {
-            background-image: url('./bg1.jpg'), url('bg1.jpg'), url('BG1.jpg'), url('image_b65d2f.jpg');
+            background-image: url('/bg1.jpg');
             opacity: 1;
         }
 
         #bg-layer-2 {
-            background-image: url('./bg2.jpg'), url('bg2.jpg'), url('BG2.jpg'), url('image_b65d89.jpg');
+            background-image: url('/bg2.jpg');
             opacity: 0;
         }
 
+        /* İçerik Katmanı */
         .overlay {
+            position: relative;
+            z-index: 2;
             min-height: 100vh;
-            background: radial-gradient(circle at center, rgba(15, 3, 3, 0.45) 0%, rgba(5, 1, 1, 0.82) 100%);
+            background: radial-gradient(circle at center, rgba(15, 3, 3, 0.35) 0%, rgba(5, 1, 1, 0.72) 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -60,11 +65,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(15, 4, 4, 0.75);
-            border: 1px solid rgba(255, 60, 0, 0.4);
+            background: rgba(15, 4, 4, 0.72);
+            border: 1px solid rgba(255, 60, 0, 0.45);
             border-radius: 14px;
             margin-bottom: 45px;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(6px);
             box-shadow: 0 0 25px rgba(255, 40, 0, 0.25);
         }
 
@@ -79,7 +84,7 @@
         }
 
         .bg-switch-btn {
-            background: rgba(255, 42, 0, 0.25);
+            background: rgba(255, 42, 0, 0.3);
             border: 1px solid #ff4500;
             color: #ffae00;
             padding: 8px 14px;
@@ -98,14 +103,14 @@
         .countdown-section {
             text-align: center;
             margin-bottom: 60px;
-            background: rgba(18, 4, 4, 0.72);
+            background: rgba(18, 4, 4, 0.68);
             padding: 40px 30px;
             border-radius: 18px;
             border: 2px solid #ff2a00;
             box-shadow: 0 0 35px rgba(255, 42, 0, 0.45);
             max-width: 900px;
             width: 100%;
-            backdrop-filter: blur(6px);
+            backdrop-filter: blur(5px);
         }
 
         .countdown-title {
@@ -127,7 +132,7 @@
         }
 
         .time-box {
-            background: rgba(10, 2, 2, 0.85);
+            background: rgba(10, 2, 2, 0.82);
             padding: 20px 15px;
             border-radius: 12px;
             min-width: 105px;
@@ -179,13 +184,13 @@
         }
 
         .product-card {
-            background: rgba(18, 5, 5, 0.78);
+            background: rgba(18, 5, 5, 0.75);
             padding: 25px 20px;
             border-radius: 14px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(255, 69, 0, 0.35);
-            backdrop-filter: blur(6px);
+            backdrop-filter: blur(5px);
         }
 
         .product-card:hover {
@@ -250,7 +255,8 @@
             width: 100%;
             border-top: 1px solid rgba(255, 69, 0, 0.25);
             font-size: 14px;
-            color: #a88a8a;
+            color: #c7aaaa;
+            background: rgba(5, 1, 1, 0.65);
         }
     </style>
 </head>
