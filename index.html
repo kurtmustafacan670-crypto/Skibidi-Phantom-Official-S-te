@@ -21,7 +21,6 @@
             overflow-x: hidden;
         }
 
-        /* Çift Görselli Otomatik Geçişli Arka Plan */
         .bg-slideshow {
             position: fixed;
             top: 0;
@@ -36,26 +35,24 @@
         }
 
         #bg-layer-1 {
-            background-image: url('bg1.jpg');
+            background-image: url('./bg1.jpg'), url('bg1.jpg'), url('BG1.jpg'), url('image_b65d2f.jpg');
             opacity: 1;
         }
 
         #bg-layer-2 {
-            background-image: url('bg2.jpg');
+            background-image: url('./bg2.jpg'), url('bg2.jpg'), url('BG2.jpg'), url('image_b65d89.jpg');
             opacity: 0;
         }
 
-        /* Karanlık Ateş Katmanı (Yazıların net okunması için) */
         .overlay {
             min-height: 100vh;
-            background: radial-gradient(circle at center, rgba(15, 3, 3, 0.55) 0%, rgba(5, 1, 1, 0.88) 100%);
+            background: radial-gradient(circle at center, rgba(15, 3, 3, 0.45) 0%, rgba(5, 1, 1, 0.82) 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 20px;
         }
 
-        /* Üst Başlık */
         header {
             width: 100%;
             max-width: 1200px;
@@ -79,11 +76,10 @@
             background: linear-gradient(90deg, #ffae00, #ff2a00);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(255, 60, 0, 0.4);
         }
 
         .bg-switch-btn {
-            background: rgba(255, 42, 0, 0.2);
+            background: rgba(255, 42, 0, 0.25);
             border: 1px solid #ff4500;
             color: #ffae00;
             padding: 8px 14px;
@@ -99,11 +95,10 @@
             color: #ffffff;
         }
 
-        /* Sayaç Bölümü */
         .countdown-section {
             text-align: center;
             margin-bottom: 60px;
-            background: rgba(18, 4, 4, 0.78);
+            background: rgba(18, 4, 4, 0.72);
             padding: 40px 30px;
             border-radius: 18px;
             border: 2px solid #ff2a00;
@@ -159,7 +154,6 @@
             letter-spacing: 1px;
         }
 
-        /* Store Bölümü */
         .store-section {
             width: 100%;
             max-width: 1100px;
@@ -185,7 +179,7 @@
         }
 
         .product-card {
-            background: rgba(18, 5, 5, 0.82);
+            background: rgba(18, 5, 5, 0.78);
             padding: 25px 20px;
             border-radius: 14px;
             text-align: center;
@@ -262,7 +256,6 @@
 </head>
 <body>
 
-    <!-- Arka Plan Katmanları -->
     <div id="bg-layer-1" class="bg-slideshow"></div>
     <div id="bg-layer-2" class="bg-slideshow"></div>
 
@@ -272,7 +265,6 @@
             <button class="bg-switch-btn" onclick="switchBackground()">SAHNE DEĞİŞTİR</button>
         </header>
 
-        <!-- Sayaç Bölümü -->
         <section class="countdown-section">
             <div class="countdown-title">SKİBİDİ PHANTOM 28 PART 2 COMİNG İN TOMMOR 7:30 PM</div>
             <div id="countdown">
@@ -283,7 +275,6 @@
             </div>
         </section>
 
-        <!-- Store Bölümü -->
         <section class="store-section">
             <h2 class="store-title">PHANTOM OFFICIAL STORE</h2>
             
@@ -328,7 +319,6 @@
     </div>
 
     <script>
-        // Arka Plan Otomatik ve Manuel Geçiş Sistemi
         let activeBg = 1;
         function switchBackground() {
             const layer1 = document.getElementById('bg-layer-1');
@@ -343,10 +333,8 @@
                 activeBg = 1;
             }
         }
-        // Her 5 saniyede bir iki görsel arasında otomatik geçiş yapar
         setInterval(switchBackground, 5000);
 
-        // Yarın Saat 19:30 Geri Sayımı
         const tomorrow = new Date();
         tomorrow.setDate(tomorrow.getDate() + 1);
         tomorrow.setHours(19, 30, 0, 0);
